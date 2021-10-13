@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import {
   FacebookLoginProvider,
   SocialAuthService,
@@ -11,4 +12,10 @@ import {
 })
 export class AppComponent {
   title = 'login-with-social';
+
+  constructor(private router: Router) {}
+
+  navigateTo(url: string) {
+    this.router.navigateByUrl(url);
+  }
 }

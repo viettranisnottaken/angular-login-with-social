@@ -8,14 +8,15 @@ import { appInitializer } from '../app-initializer';
 import { AuthService } from './auth.service';
 
 const routes: Routes = [
-  // { path: '', component: CredentialsComponent },
+  { path: '', component: CredentialsComponent },
   {
-    path: '',
+    path: 'login',
     component: LoginComponent,
   },
   {
     path: 'signup',
     component: SignupComponent,
+    pathMatch: 'full',
   },
 ];
 

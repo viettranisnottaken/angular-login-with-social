@@ -1,0 +1,38 @@
+<button (click)="toggleList()">toggle</button>
+<div class="flex-container">
+  <div class="big-container d-flex w-100">
+    <div #container class="player-container">
+      <youtube-player
+        [startSeconds]="200"
+        videoId="Bf5FdvZK-jU"
+        [height]="playerHeight"
+        [width]="playerWidth"
+      ></youtube-player>
+    </div>
+
+    <div class="lesson-list" *ngIf="isListOpened">
+      <button (click)="toggleList()">close</button>
+      <!-- <h1>hsdfskahfksahsfsfsdf</h1> -->
+    </div>
+  </div>
+</div>
+
+<!-- <button (click)="toggleList()">toggle</button>
+<mat-grid-list cols="4" rowHeight="100px">
+  <mat-grid-tile [colspan]="3">
+    <div #container class="my-container">
+      <youtube-player
+        [startSeconds]="200"
+        videoId="Bf5FdvZK-jU"
+        [height]="playerHeight"
+        [width]="playerWidth"
+      ></youtube-player>
+    </div>
+  </mat-grid-tile>
+
+  <mat-grid-tile [colspan]="1">
+    <div class="lesson-list" *ngIf="isListOpened">
+      <button (click)="toggleList()">close</button>
+    </div>
+  </mat-grid-tile>
+</mat-grid-list> -->

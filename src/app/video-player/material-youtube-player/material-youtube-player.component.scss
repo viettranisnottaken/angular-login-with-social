@@ -1,0 +1,28 @@
+.flex-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.big-container {
+  max-width: 1440px;
+  // display: flex;
+  // justify-content: center;
+}
+
+.player-container {
+  display: flex;
+  justify-content: center;
+  background-color: gray;
+  flex: 3 1 auto;
+  min-width: 0;
+}
+
+.lesson-list {
+  flex: 0 1 200px;
+  min-width: 200px;
+
+  &.closed {
+    margin-right: -500px;
+  }
+}

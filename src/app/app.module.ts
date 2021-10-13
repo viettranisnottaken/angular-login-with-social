@@ -16,10 +16,17 @@ import { AuthService } from './credentials/auth.service';
 
 const routes: Routes = [
   {
-    path: '',
+    path: 'credentials',
     loadChildren: () =>
       import('./credentials/credentials.module').then(
         (m) => m.CredentialsModule
+      ),
+  },
+  {
+    path: 'videoplayer',
+    loadChildren: () =>
+      import('./video-player/video-player.module').then(
+        (m) => m.VideoPlayerModule
       ),
   },
 ];
