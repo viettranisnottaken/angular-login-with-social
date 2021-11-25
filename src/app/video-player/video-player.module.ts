@@ -15,6 +15,8 @@ import { VideoPlayerComponent } from './video-player.component';
 import { VmPlayerWrapperComponent } from './vm-player-wrapper/vm-player-wrapper.component';
 import { VideogularWrapperComponent } from './videogular-wrapper/videogular-wrapper.component';
 import { MaterialYoutubePlayerComponent } from './material-youtube-player/material-youtube-player.component';
+import { LessonListComponent } from './material-youtube-player/lesson-list/lesson-list.component';
+import { QuizComponent } from './material-youtube-player/quiz/quiz.component';
 
 const routes: Routes = [
   { path: '', component: VideoPlayerComponent },
@@ -32,6 +34,8 @@ const routes: Routes = [
     VmPlayerWrapperComponent,
     VideogularWrapperComponent,
     MaterialYoutubePlayerComponent,
+    LessonListComponent,
+    QuizComponent,
   ],
   imports: [
     CommonModule,

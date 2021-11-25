@@ -1,20 +1,39 @@
+<!-- IMPORTANT: Instead of pushing all this into video player component, should put in a lesson component -->
+
+<div class="lesson-wrapper">
+  <div class="lesson">
+    <div class="lesson-content"></div>
+    <div class="lesson-extra"></div>
+  </div>
+  <div class="lesson-list"></div>
+</div>
+
 <button (click)="toggleList()">toggle</button>
 <div class="flex-container">
   <div class="big-container d-flex w-100">
-    <div #container class="player-container">
-      <youtube-player
-        [startSeconds]="200"
-        videoId="Bf5FdvZK-jU"
-        [height]="playerHeight"
-        [width]="playerWidth"
-      ></youtube-player>
-    </div>
-
-    <div class="lesson-list" *ngIf="isListOpened">
-      <button (click)="toggleList()">close</button>
-      <!-- <h1>hsdfskahfksahsfsfsdf</h1> -->
-    </div>
+    <ng-container *ngIf="lessonType === 'video'; else quizContainer">
+      <div #container class="player-container">
+        <youtube-player
+          [startSeconds]="200"
+          [videoId]="videoId"
+          [height]="playerHeight"
+          [width]="playerWidth"
+        ></youtube-player>
+      </div>
+    </ng-container>
+    <ng-template #quizContainer>
+      <div #container class="quiz-container">
+        <app-quiz [title]="quiz.title" [questions]="quiz.questions"></app-quiz>
+      </div>
+    </ng-template>
   </div>
+</div>
+<div class="lesson-list" *ngIf="isListOpened">
+  <button (click)="toggleList()">close</button>
+  <app-lesson-list
+    [lessons]="lessons"
+    (lessonSelected)="onLessonSelected($event)"
+  ></app-lesson-list>
 </div>
 
 <!-- <button (click)="toggleList()">toggle</button>

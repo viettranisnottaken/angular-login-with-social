@@ -1,0 +1,9 @@
+<div class="w-100">
+  <div
+    class="lesson p-3"
+    *ngFor="let lesson of lessons"
+    (click)="onSelectLesson(lesson)"
+  >
+    {{ lesson.label }}
+  </div>
+</div>
